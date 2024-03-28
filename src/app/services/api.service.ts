@@ -10,7 +10,7 @@ import { FormProduct } from '../models/formProduct';
 })
 export class ApiService {
 
-  url:string = environment.api;
+  url:string = "https://json-sever-five.vercel.app/";
 
   constructor(private httClient:HttpClient) { }
 
