@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "id": "af8a",
+      "name": "Carro",
+      "description": "5222",
+      "price": 6990,
+      "isAvailable": "false"
+    },
+    {
+      "id": "1731",
+      "name": "Notebook",
+      "description": "eletrônico",
+      "price": 1500,
+      "isAvailable": "true"
+    },
+    {
+      "id": "1998",
+      "name": "PC gamer",
+      "description": "Tecnologia",
+      "price": 12000,
+      "isAvailable": "true"
+    }
+  ]
+}

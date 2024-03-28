@@ -1,0 +1,32 @@
+<aside class="hidden bg-sidebar min-h-screen w-48 lg:flex flex-col items-center space-y-12  rounded-b-md text-white  ">
+  <img src="../../../assets/images/logo.png" alt="">
+  <nav>
+    <ul class="space-y-4 cursor-pointer"  >
+
+
+      <div [@dropdownAnimation]="dropdownStateEvent" >
+        <P>Adicionar </P>
+        <P>Remover</P>
+        <P>Atualizar</P>
+      </div>
+
+      <div class="flex gap-1.5">
+        <li routerLink="/list/products" (click)="toggleDropdownSport()" >
+          Produtos
+        </li>
+        <div [@rotateAnimation]="rotateSport">
+          <fa-icon [icon]="faChevronDown" ></fa-icon>
+        </div>
+      </div>
+
+      <div [@dropdownAnimation]="dropdownStateSport">
+
+        <P routerLink="/cadastre">Adicionar</P>
+
+      </div>
+
+
+
+    </ul>
+  </nav>
+</aside>

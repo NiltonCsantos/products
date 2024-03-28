@@ -1,0 +1,180 @@
+<div class="w-full bg-card h-screen flex ">
+
+  <app-sidebar></app-sidebar>
+
+  <div class=" w-full flex flex-col  h-full">
+
+    <app-header></app-header>
+    <!--
+    <div class="w-full bg-header h-24">
+
+    </div> -->
+
+
+
+    <div class=" h-full flex justify-center">
+      <main class=" border w-full flex items-center justify-center relative py-1.5 lg:py-0">
+
+        <div id="alert-5" class="{{display}} items-center p-4 rounded-lg bg-gray-50 dark:bg-gray-800
+        absolute top-8" role="alert">
+          <svg class="flex-shrink-0 w-4 h-4 dark:text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+          </svg>
+          <span class="sr-only">Info</span>
+          <div class="ms-3 text-sm font-medium text-gray-800 dark:text-gray-300">
+            <Span>{{message}}</Span>
+          </div>
+          <button type="button" (click)="changeVisible()"
+            class="ms-auto -mx-1.5 -my-1.5 bg-gray-50 text-gray-500 rounded-lg focus:ring-2 focus:ring-gray-400 p-1.5 hover:bg-gray-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
+            data-dismiss-target="#alert-5" aria-label="Close">
+            <span class="sr-only">Dismiss</span>
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+            </svg>
+          </button>
+        </div>
+
+
+        <form *ngIf="productId==null" class="bg-white flex flex-col justify-between  items-center shadow-md px-4 rounded-md py-5 h-5/6 lg:min-h-96 ">
+
+
+          <div class=" h-full flex flex-col items-center justify-center   gap-4">
+            <div class="flex flex-col gap-4  lg:flex-row lg:gap-12">
+
+              <div class="  flex  flex-col gap-1">
+                <label for="name">Nome</label>
+
+                <input type="text" [(ngModel)]="product.name" placeholder="Ex: Celular" name="name" id="name" required
+                  class="min-w-64 p-1 rounded-md shadow-md  focus:outline-none focus:border-gray-400 transition duration-300 border border-gray-300 lg:min-w-96" />
+              </div>
+
+              <div class="flex flex-col gap-1">
+
+                <label for="description">Descrição</label>
+                <input type="text" [(ngModel)]="product.description" name="description" id="description"
+                  placeholder="Ex: Redmi note 11" required
+                  class="min-w-64 p-1 rounded-md shadow-md  focus:outline-none focus:border-gray-400 transition duration-300 border border-gray-300 lg:min-w-96" />
+
+              </div>
+
+
+            </div>
+
+            <div class="flex flex-col  gap-4 lg:gap-12 lg:flex-row">
+
+
+
+              <div class="flex flex-col gap-1">
+                <label for="price">Valor</label>
+                <input type="number" [(ngModel)]="product.price" name="price" id="price" min="0" placeholder="valor" required
+                  class="min-w-64 p-1 rounded-md shadow-md  focus:outline-none focus:border-gray-400 transition duration-300 border border-gray-300 lg:min-w-96" />
+              </div>
+
+              <div class="flex flex-col gap-1">
+                <p>Disponível</p>
+
+                <div class="min-w-64 flex items-center gap-4 lg:min-w-96 ">
+
+                  <div class="flex gap-1 items-center">
+                    <input type="radio" [(ngModel)]="product.isAvailable" id="true" name="isAvailable" value="true" />
+                    <label for="true">Sim</label>
+                  </div>
+
+                  <div class="flex gap-1 items-center">
+                    <input type="radio" [(ngModel)]="product.isAvailable" name="isAvailable" id="false" value="false" />
+                    <label for="false">Não</label>
+                  </div>
+
+
+
+
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+
+
+
+
+
+          <button class="bg-sidebar p-1 rounded-md text-white" type="submit" (click)="onSubmite()">Confirmar</button>
+
+
+        </form>
+
+
+        <form *ngIf="productId!=null" class="bg-white flex flex-col justify-between  items-center shadow-md px-4 rounded-md py-5  h-5/6 lg:min-h-96 ">
+
+
+          <div class=" h-full flex flex-col items-center justify-center   gap-4">
+            <div class="flex flex-col gap-4  lg:flex-row lg:gap-12">
+
+              <div class="  flex  flex-col gap-1">
+                <label for="name">Nome</label>
+
+                <input type="text" [(ngModel)]="productFind.name" placeholder="Ex: Celular" name="name" id="name" required
+                  class="min-w-64 p-1 rounded-md shadow-md  focus:outline-none focus:border-gray-400 transition duration-300 border border-gray-300 lg:min-w-96" />
+              </div>
+
+              <div class="flex flex-col gap-1">
+
+                <label for="description">Descrição</label>
+                <input type="text" [(ngModel)]="productFind.description" name="description" id="description"
+                  placeholder="Ex: Redmi note 11" required
+                  class="min-w-64 p-1 rounded-md shadow-md  focus:outline-none focus:border-gray-400 transition duration-300 border border-gray-300 lg:min-w-96" />
+
+              </div>
+
+
+            </div>
+
+            <div class="flex flex-col  gap-4 lg:gap-12 lg:flex-row">
+
+
+
+              <div class="flex flex-col gap-1">
+                <label for="price">Valor</label>
+                <input type="number" [(ngModel)]="productFind.price" name="price" id="price" min="0" placeholder="valor" required
+                  class="min-w-64 p-1 rounded-md shadow-md  focus:outline-none focus:border-gray-400 transition duration-300 border border-gray-300 lg:min-w-96" />
+              </div>
+
+              <div class="flex flex-col gap-1">
+                <p>Disponível</p>
+
+                <div class="min-w-64 flex items-center gap-4 lg:min-w-96 ">
+
+                  <div class="flex gap-1 items-center">
+                    <input type="radio" [(ngModel)]="productFind.isAvailable" id="true" name="isAvailable" value="true" />
+                    <label for="true">Sim</label>
+                  </div>
+
+                  <div class="flex gap-1 items-center">
+                    <input type="radio" [(ngModel)]="productFind.isAvailable" name="isAvailable" id="false" value="false" />
+                    <label for="false">Não</label>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <button class="bg-sidebar p-1 rounded-md text-white" type="submit" (click)="onHandlePut()">Confirmar</button>
+
+
+        </form>
+
+
+      </main>
+    </div>
+
+  </div>
+
+</div>

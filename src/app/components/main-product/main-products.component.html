@@ -1,0 +1,76 @@
+<main class=" h-full w-full overflow-auto flex flex-col rounded-md gap-6 p-4"
+>
+
+
+
+<div *ngIf="products.length==0; else data" role="status" class="w-full p-4 space-y-4 border border-gray-200 divide-y divide-gray-200 rounded shadow animate-pulse dark:divide-gray-700 md:p-6 ">
+  <div class="flex items-center justify-between">
+      <div>
+          <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+          <div class="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+      </div>
+      <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+  </div>
+  <div class="flex items-center justify-between pt-4">
+      <div>
+          <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+          <div class="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+      </div>
+      <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+  </div>
+  <div class="flex items-center justify-between pt-4">
+      <div>
+          <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+          <div class="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+      </div>
+      <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+  </div>
+  <div class="flex items-center justify-between pt-4">
+      <div>
+          <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+          <div class="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+      </div>
+      <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+  </div>
+  <div class="flex items-center justify-between pt-4">
+      <div>
+          <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+          <div class="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+      </div>
+      <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+  </div>
+  <div class="flex items-center justify-between pt-4">
+      <div>
+          <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+          <div class="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+      </div>
+      <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+  </div>
+  <div class="flex items-center justify-between pt-4">
+      <div>
+          <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+          <div class="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+      </div>
+      <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+  </div>
+
+</div>
+
+<ng-template #data>
+  <app-card class="w-full"
+    *ngFor="let product of products"
+    [name]="product.name"
+    [price]="product.price"
+    [id]="product.id"
+    (onDelete)="handleDelete($event)">
+  </app-card>
+</ng-template>
+
+<button class="bg-sidebar w-28 p-1 text-white rounded-md absolute right-8 bottom-8" routerLink="/cadastre">
+  Adicionar
+</button>
+
+
+
+
+</main>

@@ -1,0 +1,25 @@
+<div class="bg-white shadow-md rounded-md flex justify-between p-4">
+
+
+  <div class="space-y-4">
+    <h2 class="text-2xl font-bold">{{name}}</h2>
+
+    <div  >
+      <p>{{price}} R$</p>
+    </div>
+  </div>
+
+  <div class=" flex gap-4 items-center">
+    <!-- Não há mais detalhes -->
+    <!-- <button class=" bg-sidebar text-white rounded-d  p-1 rounded-md" [routerLink]="['/list/details', id]">Detalhes</button> -->
+
+    <fa-icon [icon]="edit" [routerLink]="['/cadastre', id]"></fa-icon>
+
+
+    <fa-icon [icon]="delete" (click)="handleClick(id)"></fa-icon>
+
+
+  </div>
+
+
+</div>

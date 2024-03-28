@@ -1,0 +1,23 @@
+<div class="bg-header h-screen flex items-center justify-center shadow-lg">
+
+  <form class="bg-form h-80 w-80 flex flex-col items-center py-4 rounded-md space-y-4" method="post">
+    <h1 class="text-3xl font-bold">Login</h1>
+
+    <div class="border-0 border-black w-full px-4 py-2 space-y-4" >
+
+      <input type="email" required class=" shadow-lg w-full rounded-md p-1" name="email" placeholder="Email" [(ngModel)]="email">
+      <div>
+        <input type="password" required class=" shadow-lg w-full rounded-md p-1" name="password" placeholder="Senha" [(ngModel)]="password">
+        <p class="text-end w-full p-5 text-sm m-top ">Esqueceu a senha?</p>
+      </div>
+
+
+    </div>
+
+    <div class="space-y-8 w-full px-4">
+      <button class="bg-header text-white rounded-md w-full p-1" type="submit" routerLink="list/products">Entrar</button>
+      <p  routerLink="cadastre" class="text-sm  cursor-pointer">Não possui uma conta? Cadastre-se agora</p>
+    </div>
+  </form>
+
+</div>
